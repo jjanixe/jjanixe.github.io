@@ -1,0 +1,21 @@
+title: Visually Grounding Language Instruction for History-Dependent Manipulation
+authors:
+  - name: Hyemin Ahn
+  - name: Obin Kwon
+  - name: Kyungdo Kim
+  - name: Jaeyeon Jeong
+    me: true
+  - name: Howoong Jun
+  - name: Hongjung Lee
+  - name: Dongheui Lee
+  - name: Songhwai Oh
+venue: "IEEE International Conference on Robotics and Automation (ICRA)"
+year: 2022
+image: images/placeholder_paper.svg
+# project_url: https://...    ← 있으면 title이 이 URL로 링크됨, 없으면 링크 없음
+links:                         # ← 필요한 것만 남기고 나머지는 삭제
+  - label: arXiv
+    url: "#"
+  - label: code
+    url: "#"
+description: Brief one-sentence description.

@@ -1,0 +1,21 @@
+title: Gradual Receptive Expansion Using Vision Transformer for Online 3D Bin Packing
+authors:
+  - name: Minjae Kang
+  - name: Hogun Kee
+  - name: Yoseph Park
+  - name: Junseok Kim
+  - name: Jaeyeon Jeong
+    me: true
+  - name: Geunje Cheon
+  - name: Jaewon Lee
+  - name: Songhwai Oh
+venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)"
+year: 2024
+image: images/placeholder_paper.svg
+# project_url: https://...    ← 있으면 title이 이 URL로 링크됨, 없으면 링크 없음
+links:                         # ← 필요한 것만 남기고 나머지는 삭제
+  - label: arXiv
+    url: "#"
+  - label: code
+    url: "#"
+description: Brief one-sentence description.

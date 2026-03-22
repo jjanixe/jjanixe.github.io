@@ -1,2 +1,5 @@
-- 2025-example-paper.yaml
 - 2025-tac-grasping.yaml
+- 2024-gradual-receptive.yaml
+- 2023-meta-explore.yaml
+- 2022-ssil.yaml
+- 2022-visually-grounding.yaml

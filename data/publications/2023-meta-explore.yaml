@@ -1,0 +1,18 @@
+title: Meta-Explore: Exploratory Hierarchical Vision-and-Language Navigation Using Scene Object Spectrum Grounding
+authors:
+  - name: Minyoung Hwang
+  - name: Jaeyeon Jeong
+    me: true
+  - name: Minsoo Kim
+  - name: Yoonseon Oh
+  - name: Songhwai Oh
+venue: "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)"
+year: 2023
+image: images/placeholder_paper.svg
+# project_url: https://...    ← 있으면 title이 이 URL로 링크됨, 없으면 링크 없음
+links:                         # ← 필요한 것만 남기고 나머지는 삭제
+  - label: arXiv
+    url: "#"
+  - label: code
+    url: "#"
+description: Brief one-sentence description.
