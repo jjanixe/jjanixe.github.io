@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Add New Entry",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/add-entry.sh",
+        "${input:section}",
+        "${input:filename}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "section",
+      "type": "pickString",
+      "description": "Which section?",
+      "options": [
+        "publications",
+        "research",
+        "teaching",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "filename",
+      "type": "promptString",
+      "description": "Filename (without .yaml), e.g. 2025-my-paper"
+    }
+  ]
+}
