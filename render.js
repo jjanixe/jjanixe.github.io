@@ -37,7 +37,7 @@ function renderPublication(pub) {
         <img src="${pub.image || 'images/placeholder_paper.svg'}" alt="${pub.title}">
       </div>
       <div class="paper-text">
-        <span class="paper-title"><a href="${(pub.links && pub.links[0] && pub.links[0].url) || '#'}">${pub.title}</a></span>
+        <span class="paper-title">${pub.project_url ? `<a href="${pub.project_url}">${pub.title}</a>` : pub.title}</span>
         <br>
         ${renderAuthors(pub.authors)}
         <br>

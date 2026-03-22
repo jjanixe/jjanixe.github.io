@@ -7,9 +7,8 @@ authors:
 venue: "Conference Name (CONF)"
 year: 2025
 image: images/placeholder_paper.svg
-links:
-  - label: project page
-    url: "#"
+# project_url: https://...    ← 있으면 title이 이 URL로 링크됨, 없으면 링크 없음
+links:                         # ← 필요한 것만 남기고 나머지는 삭제
   - label: arXiv
     url: "#"
   - label: code
