@@ -1,0 +1,17 @@
+title: Effective Exploration Via Tsallis Actor-Critic on 6D Robot Grasping
+authors:
+  - name: Jaeyeon Jeong
+    me: true
+  - name: Jonghyun Park
+  - name: Songhwai Oh
+venue: "International Conference on Control, Automation and Systems  (ICCAS)"
+year: 2024
+image: images/placeholder_paper.svg
+links:
+  - label: project page
+    url: "#"
+  - label: arXiv
+    url: "#"
+  - label: code
+    url: "#"
+description: Brief one-sentence description.
