@@ -11,8 +11,12 @@ async function loadSection(section) {
   const index = await fetchYaml(`data/${section}/_index.yaml`);
   const entries = [];
   for (const file of index) {
-    const entry = await fetchYaml(`data/${section}/${file}`);
-    entries.push(entry);
+    try {
+      const entry = await fetchYaml(`data/${section}/${file}`);
+      entries.push(entry);
+    } catch (err) {
+      console.warn(`Skipping ${section}/${file}:`, err);
+    }
   }
   return entries;
 }
@@ -80,30 +84,30 @@ function renderReviewer(rev) {
 
 // ===== Main =====
 
-async function renderAll() {
+async function renderSection(section, containerId, renderFn, wrapFn) {
   try {
-    const [pubs, research, teaching, reviewer] = await Promise.all([
-      loadSection('publications'),
-      loadSection('research'),
-      loadSection('teaching'),
-      loadSection('reviewer'),
-    ]);
-
-    document.getElementById('publications').innerHTML =
-      pubs.map(renderPublication).join('');
-
-    document.getElementById('research').innerHTML =
-      research.map(renderExperience).join('');
-
-    document.getElementById('teaching').innerHTML =
-      teaching.map(renderExperience).join('');
-
-    document.getElementById('reviewer').innerHTML =
-      `<ul class="reviewer-list">${reviewer.map(renderReviewer).join('')}</ul>`;
-
+    const entries = await loadSection(section);
+    const html = wrapFn ? wrapFn(entries.map(renderFn).join('')) : entries.map(renderFn).join('');
+    document.getElementById(containerId).innerHTML = html;
   } catch (err) {
-    console.error('Error rendering sections:', err);
+    console.error(`Error rendering ${section}:`, err);
+    document.getElementById(containerId).innerHTML =
+      `<p style="color:#c00">Failed to load ${section}. Check console for details.</p>`;
   }
+}
+
+async function renderAll() {
+  if (typeof jsyaml === 'undefined') {
+    document.body.innerHTML += '<p style="color:#c00;text-align:center;margin:2em;">Error: js-yaml library failed to load.</p>';
+    return;
+  }
+
+  await Promise.all([
+    renderSection('publications', 'publications', renderPublication),
+    renderSection('research', 'research', renderExperience),
+    renderSection('teaching', 'teaching', renderExperience),
+    renderSection('reviewer', 'reviewer', renderReviewer, html => `<ul class="reviewer-list">${html}</ul>`),
+  ]);
 }
 
 document.addEventListener('DOMContentLoaded', renderAll);
