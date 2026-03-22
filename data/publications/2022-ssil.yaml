@@ -12,8 +12,8 @@ authors:
 venue: "International Conference on Control, Automation and Systems (ICCAS)"
 year: 2022
 image: images/placeholder_paper.svg
-# project_url: https://...    ← 있으면 title이 이 URL로 링크됨, 없으면 링크 없음
-links:                         # ← 필요한 것만 남기고 나머지는 삭제
+# project_url: https://...
+links:
   - label: arXiv
     url: "#"
   - label: code
