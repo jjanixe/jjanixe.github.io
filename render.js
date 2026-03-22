@@ -54,9 +54,23 @@ function renderPublication(pub) {
   `;
 }
 
-// ===== Research & Teaching Experiences =====
+// ===== Research Experiences =====
 
-function renderExperience(exp) {
+function renderResearch(item) {
+  return `
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">${item.title}</span>
+        <span class="experience-period">${item.period}</span>
+      </div>
+      ${item.funding ? `<div class="experience-sub">- ${item.funding}</div>` : ''}
+    </div>
+  `;
+}
+
+// ===== Teaching Experiences =====
+
+function renderTeaching(exp) {
   const title = exp.course
     ? `${exp.role} — ${exp.course}`
     : `${exp.role}`;
@@ -70,7 +84,7 @@ function renderExperience(exp) {
         <span class="experience-title">${title}</span>
         <span class="experience-period">${exp.period}</span>
       </div>
-      <div class="experience-org">${org}</div>
+      <div class="experience-sub">${org}</div>
       ${exp.description ? `<div class="experience-desc">${exp.description}</div>` : ''}
     </div>
   `;
@@ -104,8 +118,8 @@ async function renderAll() {
 
   await Promise.all([
     renderSection('publications', 'publications', renderPublication),
-    renderSection('research', 'research', renderExperience),
-    renderSection('teaching', 'teaching', renderExperience),
+    renderSection('research', 'research', renderResearch),
+    renderSection('teaching', 'teaching', renderTeaching),
     renderSection('reviewer', 'reviewer', renderReviewer, html => `<ul class="reviewer-list">${html}</ul>`),
   ]);
 }
